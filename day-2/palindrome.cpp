@@ -1,17 +1,17 @@
 class Solution {
     public:
         bool isPalindrome(int x) {
-            int rev=0, ld=0, dup=x;
-            while (dup>0){
+            if (x<0){
+                return false;
+            }
+            long long rev=0, dup=x;
+            int  ld=0;
+            while (dup!=0){
                 ld=dup%10;
                 rev=(rev*10)+ld;
                 dup/=10;
             }
-            if (rev==x){
-                return true;
-            } else{
-                return false;
-            }
+            return (rev==x);
         }
     };
 
